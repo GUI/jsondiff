@@ -17,7 +17,7 @@ module JsonDiff
     elsif Array === arg1 && Array === arg2
       ArrayDiff.generate(result, prefix, arg1, arg2)
     else
-      result << replace_op(prefix, arg2)
+      result << replace_op(prefix, arg2, arg1)
     end
     result
   end

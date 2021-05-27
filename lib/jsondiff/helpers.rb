@@ -9,12 +9,12 @@ module JsonDiff
         {op: :add, path: "#{prefix}/#{key}", value: value}
       end
 
-      def remove_op(prefix, key)
-        {op: :remove, path: "#{prefix}/#{key}"}
+      def remove_op(prefix, key, previous_value)
+        {op: :remove, path: "#{prefix}/#{key}", previous_value: previous_value}
       end
 
-      def replace_op(prefix, value)
-        {op: :replace, path: prefix, value: value}
+      def replace_op(prefix, value, previous_value)
+        {op: :replace, path: prefix, value: value, previous_value: previous_value}
       end
     end
   end

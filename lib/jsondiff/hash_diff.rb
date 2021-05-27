@@ -15,7 +15,7 @@ module JsonDiff
       end
       hash1.each do |key, value|
         unless hash2.has_key? key
-          result << remove_op(prefix, key)
+          result << remove_op(prefix, key, value)
         end
       end
       result

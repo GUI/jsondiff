@@ -11,7 +11,7 @@ module JsonDiff
       elsif array1.size > array2.size
         array1[(array2.size..array1.size)].reverse.each_with_index do |value, index|
           index = array1.size - 1 - index
-          result << remove_op(prefix, index)
+          result << remove_op(prefix, index, array1[index])
         end
       end
       array2.each_with_index do |value, index|
