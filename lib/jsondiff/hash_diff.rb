@@ -11,7 +11,7 @@ module JsonDiff
         else
           value2 = hash1[key]
           if value != value2
-            JsonDiff.generate(value2, value, result, path, distinct_prefix: distinct_prefix)
+            JsonDiff.generate(value2, value, result, path, distinct_prefix: distinct_path)
           end
         end
       end
